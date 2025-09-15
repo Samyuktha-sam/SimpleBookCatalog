@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --system-gray: #98989d;
+  --system-blue: #007aff;
+  --system-red: #ff3b30;
+  --system-green: #34c759;
+  --system-orange: #ff9500;
+  --system-gray-50: #f5f5f7;
+  --system-gray-100: #e5e5ea;
+  --system-gray-200: #d1d1d6;
+  --system-gray-300: #c7c7cc;
+}
+
+html,
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  background-color: var(--system-gray-50);
+  color: #1d1d1f;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Card and Container Styles */
+.card,
+.book-card,
+.book-item {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid var(--system-gray-100);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.card:hover,
+.book-card:hover,
+.book-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Button Styles */
+.btn {
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--system-blue);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0071eb;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--system-gray-100);
+  border: none;
+  color: #1d1d1f;
+}
+
+.btn-secondary:hover {
+  background: var(--system-gray-200);
+}
+
+.btn-danger {
+  background: var(--system-red);
+  border: none;
+  color: white;
+}
+
+.btn-warning {
+  background: var(--system-orange);
+  border: none;
+  color: white;
+}
+
+/* Form Controls */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid var(--system-gray-200);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.form-control:focus {
+  border-color: var(--system-blue);
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.15);
+  outline: none;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #1d1d1f;
+  margin-bottom: 0.5rem;
+}
+
+/* Validation States */
+.valid.modified:not([type=checkbox]) {
+  border-color: var(--system-green);
+}
+
+.invalid {
+  border-color: var(--system-red);
+}
+
+.validation-message {
+  color: var(--system-red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Error Boundary */
+.blazor-error-boundary {
+  background: var(--system-red);
+  padding: 1rem;
+  color: white;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.blazor-error-boundary::after {
+  content: "An error has occurred.";
+  font-weight: 500;
+}
+
+/* Top Navigation */
+.top-row {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid var(--system-gray-100);
+}
+
+.top-row a {
+  color: var(--system-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: #1d1d1f;
+  line-height: 1.2;
+}
+
+/* Content Layout */
+.content {
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Utility Classes */
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --system-gray-50: #1d1d1f;
+    --system-gray-100: #2d2d2f;
+    --system-gray-200: #3d3d3f;
+    --system-gray-300: #4d4d4f;
+  }
+
+  html,
+  body {
+    background-color: #000000;
+    color: #f5f5f7;
+  }
+
+  .card,
+  .book-card,
+  .book-item {
+    background: rgba(45, 45, 47, 0.8);
+    border-color: var(--system-gray-200);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .form-label {
+    color: #f5f5f7;
+  }
+
+  .form-control {
+    background: var(--system-gray-100);
+    border-color: var(--system-gray-200);
+    color: #f5f5f7;
+  }
+
+  .btn-secondary {
+    background: var(--system-gray-200);
+    color: #f5f5f7;
+  }
+
+  .btn-secondary:hover {
+    background: var(--system-gray-300);
+  }
+
+  .top-row {
+    background: rgba(29, 29, 31, 0.8);
+    border-color: var(--system-gray-200);
+  }
+}

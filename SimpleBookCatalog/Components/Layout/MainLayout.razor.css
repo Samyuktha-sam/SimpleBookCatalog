@@ -1,0 +1,104 @@
+.page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+}
+
+main {
+    flex: 1;
+}
+
+.sidebar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--system-gray-100);
+}
+
+.top-row {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid var(--system-gray-100);
+    padding: 0.8rem 1.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+    .top-row ::deep a, .top-row ::deep .btn-link {
+        color: var(--system-blue);
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s;
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
+        color: #0071eb;
+        text-decoration: none;
+    }
+
+    .top-row ::deep a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.content {
+    padding: 2rem 1.5rem;
+    background: transparent;
+}
+
+@media (max-width: 640.98px) {
+    .top-row {
+        justify-content: space-between;
+        padding: 0.8rem 1rem;
+    }
+
+    .top-row ::deep a, .top-row ::deep .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .content {
+        padding: 3rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .page {
+        background: linear-gradient(135deg, #1d1d1f 0%, #000 100%);
+    }
+
+    .sidebar {
+        background: rgba(45, 45, 47, 0.8);
+        border-color: var(--system-gray-200);
+    }
+
+    .top-row {
+        background: rgba(29, 29, 31, 0.8);
+        border-color: var(--system-gray-200);
+    }
+}
